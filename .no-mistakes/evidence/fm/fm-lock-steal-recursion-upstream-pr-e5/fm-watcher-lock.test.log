@@ -2,11 +2,12 @@ ok - wait deadline diagnoses and reaps a stopped test child without hanging
 ok - simultaneous watcher starts leave exactly one live process
 ok - fm_pid_identity real ps fallback is locale-invariant
 ok - fm_pid_identity is locale-invariant across LC_ALL/LC_TIME
+ok - fm_pid_identity ps fallback is terminal-width-invariant
 ok - /proc process identity ignores simulated btime changes
 ok - /proc process identity detects pid reuse
 ok - MSYS /proc process identity regression skipped on non-Windows host
 ok - killed watcher stale lock is reclaimed
-tests/fm-watcher-lock.test.sh: line 1231: 93972 Killed: 9               FM_STATE_OVERRIDE="$state" bash -c '
+tests/fm-watcher-lock.test.sh: line 1242: 83728 Killed: 9               FM_STATE_OVERRIDE="$state" bash -c '
     . "$1"
     fm_lock_remove_path() {
       if [ "$1" = "$STATE/.watch.lock" ]; then
@@ -38,12 +39,11 @@ ok - arm attaches to a live fresh watcher and fails loudly when that cycle has n
 ok - attached arm signals record a classified lifecycle entry
 ok - arm starts cleanly and resurfaces recovery after a dead-pid lock
 ok - arm cleans child watcher and temp output on HUP
-WAKE_ACK_REQUIRED: after handling completes run bin/fm-wake-drain.sh --ack-through 1 --recovery-generation 32879.1790261800.wEirIW
+WAKE_ACK_REQUIRED: after handling completes run bin/fm-wake-drain.sh --ack-through 1 --recovery-generation 28208.1790263431.rckxvj
 WARNING: queued wakes pending - drain them with bin/fm-wake-drain.sh before anything else.
 ok - arm propagates an immediate watcher wake before confirmation
 ok - arm attaches to a peer watcher after child stands down and surfaces a missing successor
-watcher: lock held by live pid 41225 but heartbeat is stale for 843605813s (>300s); inspect or stop that watcher before re-arming.
+watcher: lock held by live pid 40019 but heartbeat is stale for 843607444s (>300s); inspect or stop that watcher before re-arming.
 ok - arm reports FAILED and exits non-zero when no fresh watcher can be confirmed
 ok - cycle-exit ledger links a verified successor and remains size-capped
 ok - SIGSTOP distinguishes live PID from stale beacon and termination records the exit class
-bash tests/fm-watcher-lock.test.sh  19.21s user 26.89s system 55% cpu 1:23.25 total

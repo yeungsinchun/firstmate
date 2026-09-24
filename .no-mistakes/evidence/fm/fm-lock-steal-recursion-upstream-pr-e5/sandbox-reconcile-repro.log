@@ -1,0 +1,19 @@
+== [base 977a81e (before fix)] sandbox-exec (deny writes under /private/tmp/fm-repro.ujL3/claims) fm-procevent.sh reconcile, 30s limit
+RESULT: HUNG - reconcile still running after 30s, killed
+-- stdout:
+
+-- stderr (first 5 lines, 598 total):
+basename: /private/tmp/fm-repro.ujL3/claims/repro-src.lock.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.ste
+basename: /private/tmp/fm-repro.ujL3/claims/repro-src.lock.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.ste
+basename: /private/tmp/fm-repro.ujL3/claims/repro-src.lock.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.ste
+basename: /private/tmp/fm-repro.ujL3/claims/repro-src.lock.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.ste
+basename: /private/tmp/fm-repro.ujL3/claims/repro-src.lock.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.ste
+-- .steal artifacts under claim root: 0
+
+== [target 46cf59e (with fix)] sandbox-exec (deny writes under /private/tmp/fm-repro.dukL/claims) fm-procevent.sh reconcile, 30s limit
+RESULT: exited rc=0 after 1s
+-- stdout:
+reconciled: published=0 started=0 stopped=0 uncertain=0 failed=0
+
+-- stderr (first 5 lines, 0 total):
+-- .steal artifacts under claim root: 0

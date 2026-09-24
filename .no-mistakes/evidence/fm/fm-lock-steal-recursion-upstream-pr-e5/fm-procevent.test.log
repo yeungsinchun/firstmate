@@ -31,16 +31,16 @@ ok - a worker-owned board is armed once and re-armed only to acknowledge an open
 ok - a board close carrying the captain's real answer is still announced
 ok - the shipped poll governor bounds an instantly returning source
 ok - a transient Lavish poll interruption is retried quietly and never announced
-not-autohandled: lavish-513c381df007fa73 (left for the handler; still unacknowledged)
+not-autohandled: lavish-068a257fd640f935 (left for the handler; still unacknowledged)
 ok - a staged worker reply is handed to the board once across quiet poll retries
 ok - a listener whose staged reply is gone polls the board without one
 ok - a listener that refuses its own setup leaves the staged reply for the next one
 ok - a listener whose artifact vanished leaves the staged reply for the next one
-not-autohandled: lavish-7cff05a774362f99 (left for the handler; still unacknowledged)
+not-autohandled: lavish-53a5341794ae3057 (left for the handler; still unacknowledged)
 ok - an interruption that outlives the bounded retries is captured and announced
-not-autohandled: lavish-f09c1c8e251eadad (left for the handler; still unacknowledged)
+not-autohandled: lavish-fdc828dc7f6ef4f6 (left for the handler; still unacknowledged)
 ok - only the exact interruption is retried; an unrelated SERVER_ERROR still surfaces
-not-autohandled: lavish-4078965a4bdf1c50 (left for the handler; still unacknowledged)
+not-autohandled: lavish-440784fe10173f12 (left for the handler; still unacknowledged)
 ok - only the literal two-line interruption enters the quiet retry policy
 ok - arm rejects malformed and out-of-range retry delays before registration
 ok - poll cleanup safely handles an apostrophe-containing TMPDIR
@@ -132,17 +132,16 @@ ok - a stop the guard cannot prove is retried until the expired runner is reaped
 ok - retirement escalates after TERM leaves a surviving child (absent leader)
 ok - retirement escalates after TERM leaves a surviving child (zombie leader)
 ok - an expired runner's guard escalates past a signal-proof child
-guard phase: fresh read 6.303-6.316s, expiry 8s, two full intervals could not finish before 18.303s (deadline 17s)
-guard bound: lease=7s check=6s reaped 12.8s after the last owner activity, documented bound 15s
+guard phase: fresh read 6.455-6.467s, expiry 8s, two full intervals could not finish before 18.455s (deadline 17s)
+guard bound: lease=7s check=6s reaped 13.2s after the last owner activity, documented bound 15s
 ok - an orphaned runner is reaped within the lease plus ONE check interval
 decimal interval: 08 halves to 4s and its listener started
 decimal interval: 010 halves to 5s and its listener started
 ok - a zero-prefixed decimal interval starts its listener and halves as decimal
 ok - one unreadable read does not end a live runner
-ordinary stop: start status=143 retirement=527ms sampled windows=3443/3460ms
+ordinary stop: start status=143 retirement=510ms sampled windows=4836/4939ms
 ok - a runner exits on the ordinary stop signal instead of outliving it
 ok - a group whose leader died to something else is still refused, not signalled
 ok - reconcile returns promptly when the claim root refuses writes
 
 all procevent tests passed
-bash tests/fm-procevent.test.sh  91.46s user 120.18s system 52% cpu 6:43.07 total

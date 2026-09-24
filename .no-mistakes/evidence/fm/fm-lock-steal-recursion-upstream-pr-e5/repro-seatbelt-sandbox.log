@@ -1,0 +1,16 @@
+[BASE d4f3b78] claim root mode: drwx------ (writable by owner outside the sandbox)
+[BASE d4f3b78] sandbox probe: mkdir: /private/tmp/fmrepro-run.7RBp/home/.local/state/firstmate/procevent-claims/probe: Operation not permitted
+[BASE d4f3b78] RESULT: reconcile still running after 30s -> killed (watcher would be wedged)
+[BASE d4f3b78] stdout: 
+[BASE d4f3b78] stderr (first 3 lines, 575 total):
+basename: /private/tmp/fmrepro-run.7RBp/home/.local/state/firstmate/procevent-claims/repro-src.lock.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.st
+basename: /private/tmp/fmrepro-run.7RBp/home/.local/state/firstmate/procevent-claims/repro-src.lock.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.st
+basename: /private/tmp/fmrepro-run.7RBp/home/.local/state/firstmate/procevent-claims/repro-src.lock.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.steal.st
+[BASE d4f3b78] .steal artifacts under claim root: 0
+
+[FIXED 0d98d74] claim root mode: drwx------ (writable by owner outside the sandbox)
+[FIXED 0d98d74] sandbox probe: mkdir: /private/tmp/fmrepro-run.7Nw6/home/.local/state/firstmate/procevent-claims/probe: Operation not permitted
+[FIXED 0d98d74] RESULT: reconcile exited rc=0 after 0s
+[FIXED 0d98d74] stdout: reconciled: published=0 started=0 stopped=0 uncertain=0 failed=0
+[FIXED 0d98d74] stderr (first 3 lines, 0 total):
+[FIXED 0d98d74] .steal artifacts under claim root: 0

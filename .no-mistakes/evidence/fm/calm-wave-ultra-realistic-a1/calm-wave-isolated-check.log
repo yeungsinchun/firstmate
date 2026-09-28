@@ -1,0 +1,7 @@
+tickMs=16 paint={"family":"dark","mode":"truecolor"} mode=truecolor
+freezeResume pass frozenColumn=2 time=1440
+dispersion pass
+perf avg=0.395ms
+correlation=0.962
+physics pass
+ALL ISOLATED CHECKS PASS

@@ -1,0 +1,8 @@
+ok - the Calm mod is one hooks module, linked into the project's auto-load path, with no command, skill, agent, or classic hook path that bypasses its exact opt-in
+ok - the Pi working ship renders byte-for-byte the shared sprite core's shaded frame at both color depths, at every width, step, freeze, clamp, and reset
+ok - the shared sea follows deep-water dispersion with consistent slopes and non-repeating travel, and the boat cruises calmly, turns smoothly at both edges, heaves with the water under it, pitches both ways, keeps rocking between waves, and is drawn visibly rising and falling
+ok - the Raster packing lays the shared shaded frame out row-major with its own colors, the terminal default for uncolored cells, dark or light by theme with light as the both-readable fallback, within the Raster's color-pair budget, with BMP glyphs, clipping, and a standard base64 encoding
+ok - the Calm policy resolves the shared preference exactly as Pi does, reads on, max, and off as Pi does, and shares Pi's 240-character-or-newline preservation behavior while classifying working notes by stop reason, tool use, and restored transcript shape
+ok - the mod's operational-input classifier agrees with bin/fm-operational-input.sh on all 77 corpus cases: every current kind the owner encodes, every legacy shape, and every near miss
+ok - the mod's doorbell port agrees with bin/fm-operational-input.sh doorbell-kind on all 28 cases: every record the owner writes and every unbacked or malformed near miss
+EXIT:0

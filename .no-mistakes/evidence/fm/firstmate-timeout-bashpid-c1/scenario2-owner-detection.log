@@ -1,0 +1,32 @@
+SCENARIO 2: Owner PID detection on bash 3.2 and 5.3 via absolute /bin/sh fallback
+Date: 2026-09-30T14:33:55Z
+
+=== /bin/bash ===
+GNU bash, version 3.2.57(1)-release (arm64-apple-darwin25)
+top-level check:
+  owner=11159 self=11159 PPID=10818
+  top-level owner==self PASS (should swap to PPID)
+  swap to PPID PASS owner=10818
+subshell check:
+  subshell owner=11159 self=11166 PPID=10818
+  subshell owner!=self PASS
+BASHBIN PASS
+
+=== bash ===
+GNU bash, version 5.3.20(1)-release (aarch64-apple-darwin25.6.0)
+top-level check:
+  owner=11178 self=11178 PPID=10818
+  top-level owner==self PASS (should swap to PPID)
+  swap to PPID PASS owner=10818
+subshell check:
+  subshell owner=11178 self=11184 PPID=10818
+  subshell owner!=self PASS
+BASHBIN PASS
+
+--- Restricted PATH test (empty PATH, only absolute /bin/sh should still work) ---
+restricted PATH: owner=11185 self=11185 PPID=10818
+PASS self non-empty with empty PATH
+PASS self numeric 11185
+
+Note: previous ${BASHPID:-$$} fallback would yield parent pid, causing caller != parent check to fail.
+New fallback ${BASHPID:-$(exec /bin/sh -c '\''echo "$PPID"'\'')} yields true subshell pid, so tests pass.

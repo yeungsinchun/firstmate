@@ -1,0 +1,10 @@
+--- SCENARIO 1b: old code crash demo ---
+Simulating OLD code: [ "$owner" != "$BASHPID" ] under set -u + unset BASHPID
+trying old check: [ "$owner" != "$BASHPID" ]
+/bin/bash: line 5: BASHPID: unbound variable
+EXIT CODE 127: old code crashed as expected (BASHPID unbound variable)
+
+New fixed check:
+new self=10517 owner=10517
+new check: owner == self -> would swap to PPID
+new code completed without crash PASS

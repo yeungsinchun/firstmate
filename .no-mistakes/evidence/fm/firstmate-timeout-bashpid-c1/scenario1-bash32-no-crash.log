@@ -1,0 +1,22 @@
+SCENARIO 1: Crash-free fm_exec_timed on bash 3.2 under set -u
+Date: 2026-09-30T14:33:54Z
+Repo: /Users/sinchunyeung/.no-mistakes/worktrees/b5a3cd9aa502/01M3SBCFVCJXPAN9XEA86416H3
+Branch: HEAD
+Target: bba6219
+
+--- Old code would crash under set -u + unset BASHPID ---
+attempting old check: [ "$owner" != "$BASHPID" ]
+/bin/bash: line 5: BASHPID: unbound variable
+OLD CODE EXIT=127: crashed with 'BASHPID: unbound variable' as expected on bash 3.2
+
+--- Fixed code using ${BASHPID:-$(exec /bin/sh -c 'echo "$PPID"')} ---
+sourced bin/fm-timeout-lib.sh under /bin/bash 3.2 with set -u: OK
+hello-from-bounded
+fm_exec_timed exit rc=42
+PASS: status preserved, no crash
+
+--- Also verify self detection not empty under set -u ---
+owner=11131 self=11131 PPID=10818
+PASS top-level self == owner
+subshell owner=11131 self=11144 PPID=10818
+PASS subshell owner != self

@@ -1,0 +1,29 @@
+SCENARIO 4: Spawn backlog In-flight transition via fm_tasks_axi bounded by fm_exec_timed under bash 3.2
+Date: 2026-09-30T14:34:05Z
+Simulates bin/fm-spawn.sh -> bin/fm-backlog-transition-lib.sh fm_tasks_axi path
+
+fake tasks-axi created at /tmp/fm-fake-tasks-axi.Aiqm1S
+
+=== /bin/bash ===
+GNU bash, version 3.2.57(1)-release (arm64-apple-darwin25)
+--- 4a: successful tasks-axi start under FM_TASKS_AXI_TIMEOUT ---
+tasks-axi start my-id pid 13116
+started my-id
+
+--- 4b: hung tasks-axi should be bounded (1s) ---
+hung tasks-axi will sleep 300
+hung elapsed 1s rc container exit ignored, checking bound
+PASS 4b bounded
+
+=== bash ===
+GNU bash, version 5.3.20(1)-release (aarch64-apple-darwin25.6.0)
+--- 4a: successful tasks-axi start under FM_TASKS_AXI_TIMEOUT ---
+tasks-axi start my-id pid 13322
+
+--- 4b: hung tasks-axi should be bounded (1s) ---
+hung tasks-axi will sleep 300
+hung elapsed 1s rc container exit ignored, checking bound
+PASS 4b bounded
+
+Without FM_TASKS_AXI_TIMEOUT, fm_tasks_axi execs directly (no bound), still should not crash on bash 3.2:
+direct exec tasks-axi ok

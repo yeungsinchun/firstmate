@@ -1,0 +1,23 @@
+=== Scenario 1: fm_exec_timed under stock bash 3.2 must not crash on BASHPID ===
+Bash version: GNU bash, version 3.2.57(1)-release (arm64-apple-darwin25)
+
+--- Test 1a: subshell call (intended usage: $(fm_tasks_axi ...) ) under /bin/bash set -u ---
+rc=42 out=hello-from-subshell
+PASS subshell call returned 42
+PASS output preserved
+=> Test 1a PASS
+
+--- Test 1b: direct fm_exec_timed with perl watchdog, bounded sleep should timeout at 124 ---
+rc=124
+PASS timed out with 124
+=> Test 1b PASS
+
+--- Test 1c: verify /bin/bash set -u + unset BASHPID does not crash on self extraction ---
+self=54787 ok
+=> Test 1c PASS
+
+--- Test 1d: original bug would have crashed: set -u; echo $BASHPID ---
+/bin/bash: BASHPID: unbound variable
+CONFIRMED original pattern crashes on bash 3.2 (exit 127) - fix avoids this
+
+=== Scenario 1 COMPLETE: all checks passed ===

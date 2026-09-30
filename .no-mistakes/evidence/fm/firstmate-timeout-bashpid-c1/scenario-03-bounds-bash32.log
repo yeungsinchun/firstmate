@@ -1,0 +1,66 @@
+=== Scenario 3: Bound enforcement still works on bash 3.2 perl watchdog ===
+Bash versions tested: /bin/bash=GNU bash, version 3.2.57(1)-release (arm64-apple-darwin25)
+
+--- Test 3a: full fm-timeout-lib suite under /bin/bash 3.2 (16 tests) ---
+ok - fm_exec_timed passes a command's status and output through unchanged
+Terminated: 15             "$@"
+ok - fm_run_timed reports 124 when the bound TERMs a read whose wrapper recorded 143
+ok - fm_run_timed passes a natural exit through when the bound fired after completion
+ok - fm_exec_timed sends TERM at the bound and a cooperative command ends there
+ok - fm_exec_timed kills a TERM-ignoring command once the grace has passed
+ok - fm_exec_timed replaces the calling shell instead of wrapping it
+ok - fm_exec_timed reaps a descendant that would otherwise hold the output past the bound
+ok - fm_exec_timed forwards a TERM it receives to the bounded command
+ok - fm_exec_timed ends the command when its named owner is already gone
+ok - fm_exec_timed ends the command when its owner dies during watchdog startup
+ok - owner detection swaps to PPID when BASHPID is absent
+ok - fm_exec_timed prefers its perl watchdog over timeout
+ok - fm_exec_timed refuses instead of running unbounded when no mechanism exists
+ok - fm_exec_timed rejects a zero, padded, non-numeric, or missing bound and a missing command
+ok - fm_exec_timed's GNU timeout fallback (skipped: no timeout binary on this host)
+ok - fm_timed_out accepts 124 and 137 and nothing else
+rc=0 ok=16 fail=0
+=> Test 3a PASS
+
+--- Test 3b: full suite under bash 5 also passes ---
+ok - fm_exec_timed passes a command's status and output through unchanged
+Terminated: 15             "$@"
+ok - fm_run_timed reports 124 when the bound TERMs a read whose wrapper recorded 143
+ok - fm_run_timed passes a natural exit through when the bound fired after completion
+ok - fm_exec_timed sends TERM at the bound and a cooperative command ends there
+ok - fm_exec_timed kills a TERM-ignoring command once the grace has passed
+ok - fm_exec_timed replaces the calling shell instead of wrapping it
+ok - fm_exec_timed reaps a descendant that would otherwise hold the output past the bound
+ok - fm_exec_timed forwards a TERM it receives to the bounded command
+ok - fm_exec_timed ends the command when its named owner is already gone
+ok - fm_exec_timed ends the command when its owner dies during watchdog startup
+ok - owner detection swaps to PPID when BASHPID is absent
+ok - fm_exec_timed prefers its perl watchdog over timeout
+ok - fm_exec_timed refuses instead of running unbounded when no mechanism exists
+ok - fm_exec_timed rejects a zero, padded, non-numeric, or missing bound and a missing command
+ok - fm_exec_timed's GNU timeout fallback (skipped: no timeout binary on this host)
+ok - fm_timed_out accepts 124 and 137 and nothing else
+rc=0 ok=16 fail=0
+=> Test 3b PASS
+
+--- Test 3c: cooperative command ends at bound (TERM) under bash 3.2 ---
+rc=124 elapsed=1
+PASS cooperative TERM at bound elapsed=1
+=> Test 3c PASS
+
+--- Test 3d: TERM-ignoring command killed after grace under bash 3.2 ---
+rc=124 elapsed=4
+PASS killed after grace elapsed=4
+=> Test 3d PASS
+
+--- Test 3e: descendant holding output cannot outlast bound ---
+rc=124 elapsed=1
+PASS descendant reaped elapsed=1
+=> Test 3e PASS
+
+--- Test 3f: replacing calling shell (PPID check) under bash 3.2 ---
+caller=34613 parent=34613
+PASS replacement verified
+=> Test 3f PASS
+
+=== Scenario 3 COMPLETE ===

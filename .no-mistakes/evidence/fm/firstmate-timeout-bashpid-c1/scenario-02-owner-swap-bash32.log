@@ -1,0 +1,26 @@
+=== Scenario 2: Owner PID swap logic on bash 3.2 ===
+Bash versions: /bin/bash=GNU bash, version 3.2.57(1)-release (arm64-apple-darwin25) | bash=GNU bash, version 5.3.20(1)-release (aarch64-apple-darwin25.6.0)
+
+--- Test 2a: owner detection swaps to PPID when BASHPID is absent (top-level) via library logic ---
+  testing with /bin/bash ...
+    PASS top-level swapped, subshell detected (rc=0)
+  testing with bash ...
+    PASS top-level swapped, subshell detected (rc=0)
+=> Test 2a PASS
+
+--- Test 2b: run dedicated regression test via FM_TEST_ONLY under /bin/bash ---
+ok - owner detection swaps to PPID when BASHPID is absent
+count=1 rc=0
+=> Test 2b PASS
+
+--- Test 2c: same regression under modern bash ---
+ok - owner detection swaps to PPID when BASHPID is absent
+count=1 rc=0
+=> Test 2c PASS
+
+--- Test 2d: prove fallback PID is numeric and equals PPID of command substitution ---
+fallback=96718 parentPID=96700 ppid=92084
+fallback correctly is subshell PID
+=> Test 2d PASS
+
+=== Scenario 2 COMPLETE ===

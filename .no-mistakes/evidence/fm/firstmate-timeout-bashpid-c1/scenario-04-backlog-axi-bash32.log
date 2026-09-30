@@ -1,0 +1,42 @@
+=== Scenario 4: Backlog mutation via fm_tasks_axi bounded call on bash 3.2 (spawn In-flight path) ===
+This reproduces bin/fm-spawn.sh moving backlog item to In flight via fm_backlog_mutate -> fm_tasks_axi -> fm_exec_timed
+Bash: GNU bash, version 3.2.57(1)-release (arm64-apple-darwin25)
+
+--- Test 4a: fm_tasks_axi bounded invocation under stock bash 3.2 set -u ---
+rc=0 out=tasks-axi called with: start abc123 --file /tmp/fake.md
+fake backlog mutation ok
+PASS fm_tasks_axi via fm_exec_timed succeeded on bash 3.2
+=> Test 4a PASS
+
+--- Test 4b: fm_tasks_axi timeout path does not crash (bound expiry) ---
+rc=124
+PASS timed out correctly with 124
+=> Test 4b PASS
+
+--- Test 4c: verify /bin/sh fallback uses /bin/sh not sh (restricted PATH) ---
+success
+rc=0
+PASS fallback used /bin/sh even under restricted PATH
+=> Test 4c PASS
+
+--- Test 4d: adversarial malformed bounds rejected on bash 3.2 ---
+fm_exec_timed: usage: fm_exec_timed <positive-seconds> <positive-grace-seconds> <command> [args...]
+PASS rejected 0 1
+fm_exec_timed: usage: fm_exec_timed <positive-seconds> <positive-grace-seconds> <command> [args...]
+PASS rejected 5 0
+fm_exec_timed: usage: fm_exec_timed <positive-seconds> <positive-grace-seconds> <command> [args...]
+PASS rejected 05 1
+fm_exec_timed: usage: fm_exec_timed <positive-seconds> <positive-grace-seconds> <command> [args...]
+PASS rejected 5 x
+fm_exec_timed: usage: fm_exec_timed <positive-seconds> <positive-grace-seconds> <command> [args...]
+PASS rejected 
+PASS all malformed bounds rejected
+=> Test 4d PASS
+
+--- Test 4e: refusal rather than unbounded when no mechanism ---
+fm_exec_timed: cannot bound bash within 5s: none of perl, timeout, or gtimeout is available
+rc=127
+PASS refused unbounded
+=> Test 4e PASS
+
+=== Scenario 4 COMPLETE ===

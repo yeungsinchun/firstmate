@@ -1,0 +1,7 @@
+try2
+rc=7
+out=to-stdout
+to-stderr
+status_pass
+stdout_pass
+stderr_pass

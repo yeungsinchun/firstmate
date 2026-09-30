@@ -1,0 +1,3 @@
+rc=0 out=tasks-axi mock: show test-id
+hello from tasks-axi
+spawn_path_pass

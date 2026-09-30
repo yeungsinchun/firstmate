@@ -1,0 +1,9 @@
+=== bash3.2 fm_tasks_axi show via backlog wrapper ===
+rc=0 out=mock tasks-axi show test-id called
+queued no no
+show_pass
+=== bash3.2 fm_backlog_mutate start simulation (without real data dir, just timeout path) ===
+mock tasks-axi show test-id called
+queued no no
+direct fm_exec_timed tasks-axi rc=0
+direct_pass

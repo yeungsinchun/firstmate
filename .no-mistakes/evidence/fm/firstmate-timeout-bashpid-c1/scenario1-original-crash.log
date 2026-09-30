@@ -1,0 +1,2 @@
+--- Original line (should fail under bash 3.2 set -u) ---
+/bin/bash: BASHPID: unbound variable

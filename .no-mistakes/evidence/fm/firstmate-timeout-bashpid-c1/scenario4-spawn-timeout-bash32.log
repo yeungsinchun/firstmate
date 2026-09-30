@@ -1,0 +1,4 @@
+testing bounded mock that sleeps
+rc=124
+timeout_pass
+/bin/bash: line 13: MOCK_DIR: unbound variable

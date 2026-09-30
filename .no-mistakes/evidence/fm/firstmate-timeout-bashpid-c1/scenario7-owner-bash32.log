@@ -1,0 +1,6 @@
+=== owner detection bash3.2 subshell ===
+subshell 646 BASHPID=empty PPID=99592
+cur=667
+=== owner detection bash3.2 direct ===
+direct 646 BASHPID=empty PPID=99592
+cur direct=646

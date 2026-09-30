@@ -1,0 +1,39 @@
+=== Live validation for fm_exec_timed bash 3.2 fix (clean) ===
+Date: Wed Sep 30 11:36:32 UTC 2026
+Host bash: GNU bash, version 5.3.20(1)-release (aarch64-apple-darwin25.6.0)
+/bin/bash: GNU bash, version 3.2.57(1)-release (arm64-apple-darwin25)
+perl: /opt/homebrew/bin/perl
+
+--- Scenario 1: BASHPID unbound variable guard ---
+Old pattern (should crash):
+/bin/bash: BASHPID: unbound variable
+old pattern exit=127 (expected non-zero, unbound variable)
+OLD correctly shows unbound variable crash
+
+New guarded pattern (should succeed):
+guarded pattern succeeded
+new pattern exit=0 (expected 0)
+PASS: Guard prevents crash
+
+--- Scenario 2: fm_exec_timed succeeds on bash 3.2 ---
+sourced ok, BASHPID=unset
+hello-from-bash32
+fm_exec_timed exit=42
+PASS: exit 42 propagated
+
+--- Scenario 3: bound expires correctly (perl watchdog) ---
+mechanism=perl
+rc=124 elapsed=1s
+PASS: bound fired at 1s with rc 124
+
+--- Scenario 4: fm_exec_timed replaces calling shell ---
+caller=1557 parent=1557 rc=0
+PASS: caller equals parent - shell replaced
+
+--- Scenario 5: bounded tasks-axi via fm_exec_timed (spawn path) ---
+mechanism=perl
+tasks-axi stub ok --version
+direct fm_exec_timed rc=0
+PASS: direct fm_exec_timed succeeded
+
+=== Clean live scenarios complete ===

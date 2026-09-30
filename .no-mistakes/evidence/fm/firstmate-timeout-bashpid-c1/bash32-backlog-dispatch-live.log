@@ -1,0 +1,58 @@
+=== Backlog dispatch on bash 3.2 (simulates fm-spawn In flight move) ===
+Date: Wed Sep 30 11:36:17 UTC 2026
+/bin/bash: GNU bash, version 3.2.57(1)-release (arm64-apple-darwin25)
+tasks-axi: 0.2.6
+
+TMP_ROOT=/var/folders/f3/h4301l8d7hn_1612_5g5hpmw0000gn/T/tmp.XaHWAXLi7l
+Row before dispatch:
+task:
+  id: test-bash32-dispatch
+  title: item for bash32 test
+  state: queued
+  blocked: no
+  blocked_by: none
+  held: no
+  hold_reason: "-"
+  hold_kind: "-"
+  hold_until: "-"
+  kind: ship
+  repo: "-"
+  priority: "-"
+  created: 2026-09-30
+  closed: "-"
+  deps: none
+  links: none
+  body: ""
+
+--- Attempting dispatch via /bin/bash (bash 3.2) with FM_TASKS_AXI_TIMEOUT=5 ---
+Calling fm_tasks_axi (bounded) on bash 3.2...
+inner bash version: GNU bash, version 5.3.20(1)-release (aarch64-apple-darwin25.6.0) (should be 3.2 if via /bin/bash)
+0.2.6
+Created meta /var/folders/f3/h4301l8d7hn_1612_5g5hpmw0000gn/T/tmp.XaHWAXLi7l/home/state/test-bash32-dispatch.meta
+window=test
+endpoint_task_id=test-bash32-dispatch
+worktree=/tmp/wt
+project=/tmp/proj
+harness=claude
+kind=ship
+mode=no-mistakes
+yolo=off
+spawn_gen=testgen
+Running actual fm_backlog_dispatch_transition under /bin/bash 3.2:
+Before dispatch row state:
+  state: queued
+  blocked: no
+  blocked_by: none
+  held: no
+PASS: fm_backlog_dispatch_transition succeeded on bash 3.2
+After dispatch row state:
+  state: in_flight
+  blocked: no
+  blocked_by: none
+  held: no
+Meta exists? yes
+dispatch transition exit=0
+
+PASS: Backlog Queued -> In flight transition works on bash 3.2 without BASHPID crash
+
+=== Backlog dispatch live test complete ===

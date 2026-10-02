@@ -1,0 +1,24 @@
+ me your message about it now.
+
+
+ Thinking...
+
+ Captain, I found a security problem in the billing project.
+
+ The billing service returns every customer's saved card number to any
+ logged-in user.
+ So any logged-in user can read another customer's saved card number.
+ The attacker needs only a normal login.
+ Every customer who saved a card is at risk now.
+
+ The flaw is in the live product.
+ I changed nothing.
+
+ I recommend fixing it now.
+ Do you want me to fix it, or write a report first?
+
+────────────────────────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────────────────────────
+~/.no-mistakes/worktrees/19c7f602a392/01M3Y739P6XB8GSPDRMTZYXXW2 (detached)
+↑21k ↓10k R115k CH99.7% $0.072 3.1%/1.0M (auto)           deepseek-v4-pro • high

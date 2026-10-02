@@ -1,0 +1,128 @@
+======================================================================
+FILE: scenarioA.approve.raw.json
+ASSISTANT FINAL TEXT:
+Captain, the billing CSV export work is finished. The change is up as PR #77, and all its checks are green:
+
+https://example.com/pull/77
+
+Nothing is blocking it — it just needs your call on whether to merge. Want me to go ahead?
+
+======================================================================
+FILE: scenarioA.deepseek-v4-pro.raw.json
+ASSISTANT FINAL TEXT:
+Captain, the billing CSV export is finished — the worker opened PR #77 at https://example.com/pull/77 and all checks are passing. Want me to merge it, or would you like to review it first?
+
+======================================================================
+FILE: scenarioA.forced.raw.json
+ASSISTANT FINAL TEXT:
+Captain, the billing CSV export is complete.
+The change is ready for your review at https://example.com/pull/77.
+All checks passed.
+Do you want me to merge this pull request?
+
+======================================================================
+FILE: scenarioA.luna.raw.json
+ERRORS: Codex error: The usage limit has been reached
+ASSISTANT FINAL TEXT:
+(none)
+
+======================================================================
+FILE: scenarioA.muse-spark-1.3.approve.raw.json
+ERRORS: meta API error (404): {"code":"model_not_found","message":"The requested model was not found.","param":null,"type":"invalid_request_error"}
+ASSISTANT FINAL TEXT:
+(none)
+
+======================================================================
+FILE: scenarioA.raw.json
+ASSISTANT FINAL TEXT:
+Captain, the billing CSV export is finished and ready for your review: https://example.com/pull/77 — all checks have passed. Let me know if you'd like me to merge it.
+
+======================================================================
+FILE: scenarioA.v4pro.auto.raw.json
+SKILL/FILE LOADS (tool results):
+  - read: ---
+name: captain-facing-writing
+description: >-
+  Load before writing any captain-facing text: chat replies, escalation
+  - read: ---
+name: ship-landing
+description: Load when a ship reports a PR or ready branch, when deciding or monitoring landing, 
+ASSISTANT FINAL TEXT:
+Captain, the billing CSV export is complete.
+The change is ready for your review at https://example.com/pull/77.
+All its checks passed.
+Do you want me to merge this pull request?
+
+======================================================================
+FILE: scenarioB.auto.raw.json
+SKILL/FILE LOADS (tool results):
+  - read: ---
+name: lavish
+description: Turn complex or visual agent responses into rich, reviewable HTML artifacts the user can a
+  - read: ---
+name: captain-facing-writing
+description: >-
+  Load before writing any captain-facing text: chat replies, escalation
+  - bash: playbooks[8]{id,use_when}:
+  diagram,"Explain relationships, flows, state, architecture, and concepts with illustrations
+  - bash: playbook:
+  id: input
+  use_when: "Must be used when the agent needs to collect user input on decisions, choices, prefer
+ASSISTANT FINAL TEXT:
+Captain, here is the card copy for the Lavish board.
+
+**Card title:** Choose when to ship the billing CSV export
+
+**About:** The billing CSV export is ready to ship. It can go in the current release or wait for the next one.
+
+**Decide:** Do you want to ship the billing CSV export now, or hold it for the next release?
+
+**Option label:** Ship it now
+**Option hint:** This choice puts the billing CSV export in the current release.
+
+**Option label:** Hold it for the next release
+**Option hint:** This choice keeps the billing CSV export out of the current release until the next one.
+
+======================================================================
+FILE: scenarioB.forced.raw.json
+ASSISTANT FINAL TEXT:
+Card title: Ship the billing CSV export now or hold it
+
+About: The billing CSV export is ready. You can ship it now or hold it for the next release.
+
+Decide: Do you want to ship the billing CSV export now, or hold it for the next release?
+
+Option 1
+Label: Ship the export now
+Hint: This choice puts the billing CSV export in the live product now.
+
+Option 2
+Label: Hold for the next release
+Hint: This choice keeps the billing CSV export out of the live product until the next release.
+
+======================================================================
+FILE: scenarioC.auto.raw.json
+SKILL/FILE LOADS (tool results):
+  - read: ---
+name: captain-facing-writing
+description: >-
+  Load before writing any captain-facing text: chat replies, escalation
+ASSISTANT FINAL TEXT:
+Captain, I found a security problem during routine work on the billing project.
+
+The billing service returns every customer's saved card number to any logged-in user. An attacker only needs an account. The attacker can then read every customer's full card number. Every customer who saved a card is at risk now.
+
+The flaw is in the live product. I have not changed anything.
+
+Do you want me to stop other work and fix this now, or do you want a written report first?
+
+======================================================================
+FILE: scenarioC.forced.raw.json
+ASSISTANT FINAL TEXT:
+Captain, I found a security problem during routine work on the billing project.
+Any logged-in user can read every customer's saved payment card number.
+The user needs no special access.
+Every customer who saved a card is at risk now.
+The problem is in the live product.
+I have not changed anything yet.
+Do you want me to stop other work and fix this problem now, or do you want a written report first?

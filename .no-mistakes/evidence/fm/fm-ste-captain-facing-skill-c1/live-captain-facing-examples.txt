@@ -1,0 +1,21 @@
+A)
+
+Captain, the password reset fix is complete. The change is ready for your review at https://example.com/pull/42. This fix stops an attacker from resetting another person's password. Do you want me to merge this pull request?
+
+B)
+
+**Card title:** Choose the password reset fix
+
+**About:** The password reset fix is ready for your review at https://example.com/pull/42. The fix stops an attacker from resetting another person's password.
+
+**Decide:** Do you want me to merge the fix, or hold it for more work?
+
+**Option 1 — Merge the fix now**
+This option accepts the fix as it stands and puts it in the live product.
+
+**Option 2 — Hold the fix for more work**
+This option keeps the fix out of the live product until you ask for more work on it.
+
+C)
+
+Captain, I found a security problem during routine work on the billing project. An attacker can read any customer's saved payment card number. This attacker needs no password. Every customer who saved a card is at risk now. The problem is in the live product. I have not changed anything yet. Do you want me to stop other work and fix this problem now, or do you want a written report first?

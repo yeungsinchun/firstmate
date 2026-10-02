@@ -1,0 +1,20 @@
+Captain, I found a problem during routine work on the customer accounts system.
+We gave one customer shared access to another customer's account by accident.
+The wrong customer can now see that customer's account details.
+The problem is in the live product.
+I have not changed anything yet.
+Do you want me to remove the shared access now, or do you want a written report first?
+
+---
+
+Card title: Choose how to handle the shared access
+
+About: One customer has shared access to another customer's account by accident in the live product. The wrong customer can now see that customer's account details.
+
+Decide: Do you want me to remove the shared access now, or wait for a written report?
+
+Option label: Remove the shared access now
+Option hint: This choice stops the wrong customer from seeing the account details.
+
+Option label: Wait for a written report
+Option hint: This choice keeps the shared access in place until you read the report.

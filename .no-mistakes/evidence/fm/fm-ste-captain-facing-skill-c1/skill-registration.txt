@@ -1,0 +1,14 @@
+$ ls -l .claude/skills/captain-facing-writing/SKILL.md
+-rw-r--r--@ 1 sinchunyeung  staff  2012 Oct  2 19:48 .claude/skills/captain-facing-writing/SKILL.md
+
+$ readlink -f .claude/skills/captain-facing-writing/SKILL.md
+/Users/sinchunyeung/.no-mistakes/worktrees/19c7f602a392/01M3Y739P6XB8GSPDRMTZYXXW2/.agents/skills/captain-facing-writing/SKILL.md
+
+$ python3 frontmatter parse (PyYAML)
+frontmatter ok: name='captain-facing-writing' matches dir; description declares a 'Load before' trigger
+  - trigger covers: chat replies
+  - trigger covers: escalations
+  - trigger covers: decision requests
+  - trigger covers: status digests
+  - trigger covers: Lavish board copy
+rc=0

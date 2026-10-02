@@ -1,0 +1,64 @@
+Real pi primary, disposable fm-lab-* lab, deepseek-v4-pro (high effort).
+Launched per docs runbook with bin/fm-lab-home.sh create and a private
+TMUX_TMPDIR socket; driven only through that socket; lab destroyed in the
+same turn (tmux kill-server + rm -rf).
+
+The primary auto-discovered the project skills (its startup panel listed
+captain-facing-writing) and the firstmate pi extensions. The capture below
+shows it loading the skill before it wrote its captain-facing reply.
+
+=== Pane capture, mid-run (after the first captain message) ===
+
+ Thinking...
+
+ [skill] captain-facing-writing:1-200 (ctrl+o to expand)
+
+ Thinking...
+
+── Working ───────────────────────────────────────────────────────────────────
+
+=== Pane capture, final reply 1 ===
+(input: "Captain here. A crewmate finished the billing CSV export task and opened
+PR #77 at https://example.com/pull/77. CI is green. Give me your final reply for
+this turn.")
+
+ Captain, I found no record of this work.
+
+ My records show no billing CSV export task, no finished worker, and no pull
+ request.
+ They show no CI result for it either.
+
+ The link you shared is a placeholder, not a real GitHub pull request:
+ https://example.com/pull/77
+
+ So I cannot report this work as finished, and I cannot treat a pull request I
+ have no record of as ready to merge.
+
+ Do you have the real pull request link, or should I check the project's
+ repository for it?
+
+=== Pane capture, final reply 2 ===
+(input: "Captain here. During routine work you found a security problem in the
+billing project: the billing service returns every customer saved card number to
+any logged-in user, and the flaw is in the live product. You changed nothing.
+Send me your message about it now.")
+
+ Captain, I found a security problem in the billing project.
+
+ The billing service returns every customer's saved card number to any
+ logged-in user.
+ So any logged-in user can read another customer's saved card number.
+ The attacker needs only a normal login.
+ Every customer who saved a card is at risk now.
+
+ The flaw is in the live product.
+ I changed nothing.
+
+ I recommend fixing it now.
+ Do you want me to fix it, or write a report first?
+
+Both replies use one idea per sentence, active voice, simple familiar words, no
+idiom, and one term per concept. Both address the captain.
+
+Pi session file (authoritative record, outside the worktree):
+/Users/sinchunyeung/.pi/agent/sessions/--Users-sinchunyeung-.no-mistakes-worktrees-19c7f602a392-01M3Y739P6XB8GSPDRMTZYXXW2--/2026-10-02T12-11-13-009Z_01a0fc86-92ed-75d5-bfdc-0ef433bf7ded.jsonl

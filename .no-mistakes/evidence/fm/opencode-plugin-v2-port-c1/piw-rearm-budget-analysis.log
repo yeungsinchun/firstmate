@@ -1,0 +1,9 @@
+# fm-pi-watch-extension.test.sh: test_opencode_primary_watch_plugin_rearms_after_wake
+default ARM_READY_TIMEOUT_MS=2000 (this host, another no-mistakes gate running concurrently):
+  change(proj): not ok - expected one successor arm, got 1
+  base(1f3e7696): not ok - same error, expected one successor arm, got 1
+budget raised to ARM_READY_TIMEOUT_MS=20000:
+  change(proj): ok (1/1)
+  base(1f3e7696): ok (2/2)
+=> budget/host-load flake present at base and at the change; not introduced by the port.
+All other 7 opencode sections in the subset pass at the change (see piw-opencode-subset.tap).

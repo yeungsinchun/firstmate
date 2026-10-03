@@ -1,0 +1,19 @@
+watcher pid: 49952 (arm ppid: 45464)
+49952 45464   00:30 bash /tmp/fmv2x/proj/bin/fm-watch.sh
+--- watch lock ledger files ---
+/tmp/fmv2x/home4/state/.watch-arm-output.CChinP:
+/tmp/fmv2x/home4/state/.watch.lock:
+/tmp/fmv2x/home4
+49952
+Sun Oct  4 02:33:45 2026     bash /tmp/fmv2x/proj/bin/fm-watch.sh
+/tmp/fmv2x/home4/state/.watch.lock.owner.bi9cK1:
+/tmp/fmv2x/home4
+49952
+Sun Oct  4 02:33:45 2026     bash /tmp/fmv2x/proj/bin/fm-watch.sh
+--- last-watcher-beat mtime ---
+Oct  4 02:34:03 2026 /tmp/fmv2x/home4/state/.last-watcher-beat
+--- blind-prompt count: 0 (0 required: coordinator armed so guard stayed silent)
+--- session transcript ---
+4|user|{"time":{"created":1791052410343},"text":"Reply with exactly WATCH_TUI_OK. Do not run commands.","files":[],"a
+7|assistant|{"time":{"created":1791052414558,"streamed":1791052418442,"completed":1791052418619},"agent":"build","model":{
+14|idle|{"time":{"created":1791052418647},"outcome":"succeeded"}

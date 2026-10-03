@@ -1,0 +1,13 @@
+ok - OpenCode plugins have an explicit ESM boundary even under a typeless parent package
+ok - OpenCode watcher plugin uses the effective FM_HOME state
+ok - OpenCode watcher plugin sources the effective config
+ok - OpenCode watcher plugin requires session lock ownership
+ok - OpenCode watcher coordinator respects primary scope
+not ok - OpenCode watch plugin must start one successor before wake prompt delivery settles: file:///Users/sinchunyeung/.no-mistakes/worktrees/19c7f602a392/01M41CT7PNEDJJTR3QN9EKK6CS/[eval1]:39
+if (armRows.length !== 2) throw new Error(`expected one successor arm, got ${armRows.length}: ${rows.join(" | ")}`);
+                                ^
+
+Error: expected one successor arm, got 1: arm=85936 predecessor=none
+    at file:///Users/sinchunyeung/.no-mistakes/worktrees/19c7f602a392/01M41CT7PNEDJJTR3QN9EKK6CS/[eval1]:39:33
+
+Node.js v24.20.0

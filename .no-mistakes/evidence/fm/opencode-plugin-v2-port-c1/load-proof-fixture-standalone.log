@@ -1,0 +1,30 @@
+# standalone v2.0.22 servers in the live fixture drives (private/tmp/fmv2x/proj): the five ported plugins load with zero failures
+timestamp=2026-10-03T18:29:41.995Z id=/private/tmp/fmv2x/proj/.opencode/plugins/fm-primary-cd-check.js
+timestamp=2026-10-03T18:29:42.005Z id=/private/tmp/fmv2x/proj/.opencode/plugins/fm-primary-pretool-check.js
+timestamp=2026-10-03T18:29:42.013Z id=/private/tmp/fmv2x/proj/.opencode/plugins/fm-primary-sessionstart-nudge.js
+timestamp=2026-10-03T18:29:42.015Z id=/private/tmp/fmv2x/proj/.opencode/plugins/fm-primary-turnend-guard.js
+timestamp=2026-10-03T18:29:42.018Z id=/private/tmp/fmv2x/proj/.opencode/plugins/fm-primary-watch-arm.js
+timestamp=2026-10-03T18:30:10.198Z id=/private/tmp/fmv2x/proj/.opencode/plugins/fm-primary-cd-check.js
+timestamp=2026-10-03T18:30:10.201Z id=/private/tmp/fmv2x/proj/.opencode/plugins/fm-primary-pretool-check.js
+timestamp=2026-10-03T18:30:10.203Z id=/private/tmp/fmv2x/proj/.opencode/plugins/fm-primary-sessionstart-nudge.js
+timestamp=2026-10-03T18:30:10.205Z id=/private/tmp/fmv2x/proj/.opencode/plugins/fm-primary-turnend-guard.js
+timestamp=2026-10-03T18:30:10.209Z id=/private/tmp/fmv2x/proj/.opencode/plugins/fm-primary-watch-arm.js
+timestamp=2026-10-03T18:30:33.619Z id=/private/tmp/fmv2x/proj/.opencode/plugins/fm-primary-cd-check.js
+timestamp=2026-10-03T18:30:33.621Z id=/private/tmp/fmv2x/proj/.opencode/plugins/fm-primary-pretool-check.js
+timestamp=2026-10-03T18:30:33.622Z id=/private/tmp/fmv2x/proj/.opencode/plugins/fm-primary-sessionstart-nudge.js
+timestamp=2026-10-03T18:30:33.623Z id=/private/tmp/fmv2x/proj/.opencode/plugins/fm-primary-turnend-guard.js
+timestamp=2026-10-03T18:30:33.624Z id=/private/tmp/fmv2x/proj/.opencode/plugins/fm-primary-watch-arm.js
+timestamp=2026-10-03T18:32:29.354Z id=/private/tmp/fmv2x/proj/.opencode/plugins/fm-primary-cd-check.js
+timestamp=2026-10-03T18:32:29.370Z id=/private/tmp/fmv2x/proj/.opencode/plugins/fm-primary-pretool-check.js
+timestamp=2026-10-03T18:32:29.374Z id=/private/tmp/fmv2x/proj/.opencode/plugins/fm-primary-sessionstart-nudge.js
+timestamp=2026-10-03T18:32:29.382Z id=/private/tmp/fmv2x/proj/.opencode/plugins/fm-primary-turnend-guard.js
+timestamp=2026-10-03T18:32:29.387Z id=/private/tmp/fmv2x/proj/.opencode/plugins/fm-primary-watch-arm.js
+timestamp=2026-10-03T18:33:25.923Z id=/private/tmp/fmv2x/proj/.opencode/plugins/fm-primary-cd-check.js
+timestamp=2026-10-03T18:33:25.935Z id=/private/tmp/fmv2x/proj/.opencode/plugins/fm-primary-pretool-check.js
+timestamp=2026-10-03T18:33:25.951Z id=/private/tmp/fmv2x/proj/.opencode/plugins/fm-primary-sessionstart-nudge.js
+timestamp=2026-10-03T18:33:25.958Z id=/private/tmp/fmv2x/proj/.opencode/plugins/fm-primary-turnend-guard.js
+timestamp=2026-10-03T18:33:25.979Z id=/private/tmp/fmv2x/proj/.opencode/plugins/fm-primary-watch-arm.js
+
+# zero 'failed to load plugin' lines for the ported fixture:
+0
+0

@@ -1,0 +1,74 @@
+# opencode server log excerpt - plugin loader behaviour on OpenCode v2.0.22
+# (1) ported worktree 01M41CT7PNEDJJTR3QN9EKK6CS: all five firstmate plugins LOAD, zero failures:
+timestamp=2026-10-03T17:52:13.592Z msg="loading plugin" id=/Users/sinchunyeung/.no-mistakes/worktrees/19c7f602a392/01M41CT7PNEDJJTR3QN9EKK6CS/.opencode/plugins/fm-primary-cd-check.js /Users/sinchunyeung/.no-mistakes/worktrees/19c7f602a392/01M41CT7PNEDJJTR3QN9EKK6CS/.opencode/plugins/fm-primary-cd-check.js
+timestamp=2026-10-03T17:52:13.594Z msg="loading plugin" id=/Users/sinchunyeung/.no-mistakes/worktrees/19c7f602a392/01M41CT7PNEDJJTR3QN9EKK6CS/.opencode/plugins/fm-primary-pretool-check.js /Users/sinchunyeung/.no-mistakes/worktrees/19c7f602a392/01M41CT7PNEDJJTR3QN9EKK6CS/.opencode/plugins/fm-primary-pretool-check.js
+timestamp=2026-10-03T17:52:13.595Z msg="loading plugin" id=/Users/sinchunyeung/.no-mistakes/worktrees/19c7f602a392/01M41CT7PNEDJJTR3QN9EKK6CS/.opencode/plugins/fm-primary-sessionstart-nudge.js /Users/sinchunyeung/.no-mistakes/worktrees/19c7f602a392/01M41CT7PNEDJJTR3QN9EKK6CS/.opencode/plugins/fm-primary-sessionstart-nudge.js
+timestamp=2026-10-03T17:52:13.596Z msg="loading plugin" id=/Users/sinchunyeung/.no-mistakes/worktrees/19c7f602a392/01M41CT7PNEDJJTR3QN9EKK6CS/.opencode/plugins/fm-primary-turnend-guard.js /Users/sinchunyeung/.no-mistakes/worktrees/19c7f602a392/01M41CT7PNEDJJTR3QN9EKK6CS/.opencode/plugins/fm-primary-turnend-guard.js
+timestamp=2026-10-03T17:52:13.598Z msg="loading plugin" id=/Users/sinchunyeung/.no-mistakes/worktrees/19c7f602a392/01M41CT7PNEDJJTR3QN9EKK6CS/.opencode/plugins/fm-primary-watch-arm.js /Users/sinchunyeung/.no-mistakes/worktrees/19c7f602a392/01M41CT7PNEDJJTR3QN9EKK6CS/.opencode/plugins/fm-primary-watch-arm.js
+
+# (2) same five files at BASE state (no default export) in sibling worktree 01M41CPBA16KVHAH572XXK08XN -> v2 loader error:
+timestamp=2026-10-03T17:54:15.847Z level=WARN run=a47dcc51 message="failed to load plugin" target=/Users/sinchunyeung/.no-mistakes/worktrees/19c7f602a392/01M41CPBA16KVHAH572XXK08XN/.opencode/plugins/fm-primary-cd-check.js ref=err_8ff8a4fe cause="Cause([Fail(PluginModule.LoadError: Plugin must export a default definition with an id and an effect or setup function. (cause: SchemaError(Missing key\n  at [\"default\"])))])" http.span=92 role=server
+timestamp=2026-10-03T17:54:15.850Z level=WARN run=a47dcc51 message="failed to load plugin" target=/Users/sinchunyeung/.no-mistakes/worktrees/19c7f602a392/01M41CPBA16KVHAH572XXK08XN/.opencode/plugins/fm-primary-pretool-check.js ref=err_bfab1076 cause="Cause([Fail(PluginModule.LoadError: Plugin must export a default definition with an id and an effect or setup function. (cause: SchemaError(Missing key\n  at [\"default\"])))])" http.span=95 role=server
+timestamp=2026-10-03T17:54:15.869Z level=WARN run=a47dcc51 message="failed to load plugin" target=/Users/sinchunyeung/.no-mistakes/worktrees/19c7f602a392/01M41CPBA16KVHAH572XXK08XN/.opencode/plugins/fm-primary-sessionstart-nudge.js ref=err_5cea32f6 cause="Cause([Fail(PluginModule.LoadError: Plugin must export a default definition with an id and an effect or setup function. (cause: SchemaError(Missing key\n  at [\"default\"])))])" http.span=114 role=server
+timestamp=2026-10-03T17:54:15.883Z level=WARN run=a47dcc51 message="failed to load plugin" target=/Users/sinchunyeung/.no-mistakes/worktrees/19c7f602a392/01M41CPBA16KVHAH572XXK08XN/.opencode/plugins/fm-primary-turnend-guard.js ref=err_58702640 cause="Cause([Fail(PluginModule.LoadError: Plugin must export a default definition with an id and an effect or setup function. (cause: SchemaError(Missing key\n  at [\"default\"])))])" http.span=128 role=server
+timestamp=2026-10-03T17:54:15.893Z level=WARN run=a47dcc51 message="failed to load plugin" target=/Users/sinchunyeung/.no-mistakes/worktrees/19c7f602a392/01M41CPBA16KVHAH572XXK08XN/.opencode/plugins/fm-primary-watch-arm.js ref=err_b3a86a10 cause="Cause([Fail(PluginModule.LoadError: Plugin must export a default definition with an id and an effect or setup function. (cause: SchemaError(Missing key\n  at [\"default\"])))])" http.span=138 role=server
+
+# (3) the machine's real fleet checkouts still on the old v1 form also fail (counted):
+       1 target=/Users/sinchunyeung/.no-mistakes/worktrees/19c7f602a392/01M41CPBA16KVHAH572XXK08XN/.opencode/plugins/fm-primary-cd-check.js
+       1 target=/Users/sinchunyeung/.no-mistakes/worktrees/19c7f602a392/01M41CPBA16KVHAH572XXK08XN/.opencode/plugins/fm-primary-pretool-check.js
+       1 target=/Users/sinchunyeung/.no-mistakes/worktrees/19c7f602a392/01M41CPBA16KVHAH572XXK08XN/.opencode/plugins/fm-primary-sessionstart-nudge.js
+       1 target=/Users/sinchunyeung/.no-mistakes/worktrees/19c7f602a392/01M41CPBA16KVHAH572XXK08XN/.opencode/plugins/fm-primary-turnend-guard.js
+       1 target=/Users/sinchunyeung/.no-mistakes/worktrees/19c7f602a392/01M41CPBA16KVHAH572XXK08XN/.opencode/plugins/fm-primary-watch-arm.js
+       2 target=/Users/sinchunyeung/.treehouse/firstmate-7bab20/10/firstmate/.opencode/plugins/fm-primary-cd-check.js
+       4 target=/Users/sinchunyeung/.treehouse/firstmate-7bab20/10/firstmate/.opencode/plugins/fm-primary-pretool-check.js
+       5 target=/Users/sinchunyeung/.treehouse/firstmate-7bab20/10/firstmate/.opencode/plugins/fm-primary-sessionstart-nudge.js
+       6 target=/Users/sinchunyeung/.treehouse/firstmate-7bab20/10/firstmate/.opencode/plugins/fm-primary-turnend-guard.js
+       7 target=/Users/sinchunyeung/.treehouse/firstmate-7bab20/10/firstmate/.opencode/plugins/fm-primary-watch-arm.js
+       6 target=/Users/sinchunyeung/.treehouse/firstmate-7bab20/3/firstmate/.opencode/plugins/fm-primary-cd-check.js
+       6 target=/Users/sinchunyeung/.treehouse/firstmate-7bab20/3/firstmate/.opencode/plugins/fm-primary-pretool-check.js
+       6 target=/Users/sinchunyeung/.treehouse/firstmate-7bab20/3/firstmate/.opencode/plugins/fm-primary-sessionstart-nudge.js
+       6 target=/Users/sinchunyeung/.treehouse/firstmate-7bab20/3/firstmate/.opencode/plugins/fm-primary-turnend-guard.js
+       6 target=/Users/sinchunyeung/.treehouse/firstmate-7bab20/3/firstmate/.opencode/plugins/fm-primary-watch-arm.js
+       7 target=/Users/sinchunyeung/.treehouse/firstmate-7bab20/4/firstmate/.opencode/plugins/fm-primary-cd-check.js
+       7 target=/Users/sinchunyeung/.treehouse/firstmate-7bab20/4/firstmate/.opencode/plugins/fm-primary-pretool-check.js
+       7 target=/Users/sinchunyeung/.treehouse/firstmate-7bab20/4/firstmate/.opencode/plugins/fm-primary-sessionstart-nudge.js
+       7 target=/Users/sinchunyeung/.treehouse/firstmate-7bab20/4/firstmate/.opencode/plugins/fm-primary-turnend-guard.js
+       7 target=/Users/sinchunyeung/.treehouse/firstmate-7bab20/4/firstmate/.opencode/plugins/fm-primary-watch-arm.js
+       6 target=/Users/sinchunyeung/.treehouse/firstmate-7bab20/5/firstmate/.opencode/plugins/fm-primary-cd-check.js
+       6 target=/Users/sinchunyeung/.treehouse/firstmate-7bab20/5/firstmate/.opencode/plugins/fm-primary-pretool-check.js
+       6 target=/Users/sinchunyeung/.treehouse/firstmate-7bab20/5/firstmate/.opencode/plugins/fm-primary-sessionstart-nudge.js
+       6 target=/Users/sinchunyeung/.treehouse/firstmate-7bab20/5/firstmate/.opencode/plugins/fm-primary-turnend-guard.js
+       6 target=/Users/sinchunyeung/.treehouse/firstmate-7bab20/5/firstmate/.opencode/plugins/fm-primary-watch-arm.js
+      12 target=/Users/sinchunyeung/.treehouse/firstmate-7bab20/6/firstmate/.opencode/plugins/fm-primary-cd-check.js
+      12 target=/Users/sinchunyeung/.treehouse/firstmate-7bab20/6/firstmate/.opencode/plugins/fm-primary-pretool-check.js
+      12 target=/Users/sinchunyeung/.treehouse/firstmate-7bab20/6/firstmate/.opencode/plugins/fm-primary-sessionstart-nudge.js
+      12 target=/Users/sinchunyeung/.treehouse/firstmate-7bab20/6/firstmate/.opencode/plugins/fm-primary-turnend-guard.js
+      12 target=/Users/sinchunyeung/.treehouse/firstmate-7bab20/6/firstmate/.opencode/plugins/fm-primary-watch-arm.js
+       1 target=/Users/sinchunyeung/.treehouse/firstmate-7bab20/7/firstmate/.opencode/plugins/fm-primary-cd-check.js
+       1 target=/Users/sinchunyeung/.treehouse/firstmate-7bab20/7/firstmate/.opencode/plugins/fm-primary-pretool-check.js
+       1 target=/Users/sinchunyeung/.treehouse/firstmate-7bab20/7/firstmate/.opencode/plugins/fm-primary-sessionstart-nudge.js
+       1 target=/Users/sinchunyeung/.treehouse/firstmate-7bab20/7/firstmate/.opencode/plugins/fm-primary-turnend-guard.js
+       1 target=/Users/sinchunyeung/.treehouse/firstmate-7bab20/7/firstmate/.opencode/plugins/fm-primary-watch-arm.js
+      10 target=/Users/sinchunyeung/.treehouse/firstmate-7bab20/8/firstmate/.opencode/plugins/fm-primary-cd-check.js
+      10 target=/Users/sinchunyeung/.treehouse/firstmate-7bab20/8/firstmate/.opencode/plugins/fm-primary-pretool-check.js
+      10 target=/Users/sinchunyeung/.treehouse/firstmate-7bab20/8/firstmate/.opencode/plugins/fm-primary-sessionstart-nudge.js
+      10 target=/Users/sinchunyeung/.treehouse/firstmate-7bab20/8/firstmate/.opencode/plugins/fm-primary-turnend-guard.js
+      10 target=/Users/sinchunyeung/.treehouse/firstmate-7bab20/8/firstmate/.opencode/plugins/fm-primary-watch-arm.js
+       6 target=/Users/sinchunyeung/.treehouse/firstmate-7bab20/9/firstmate/.opencode/plugins/fm-primary-cd-check.js
+       6 target=/Users/sinchunyeung/.treehouse/firstmate-7bab20/9/firstmate/.opencode/plugins/fm-primary-pretool-check.js
+       6 target=/Users/sinchunyeung/.treehouse/firstmate-7bab20/9/firstmate/.opencode/plugins/fm-primary-sessionstart-nudge.js
+       6 target=/Users/sinchunyeung/.treehouse/firstmate-7bab20/9/firstmate/.opencode/plugins/fm-primary-turnend-guard.js
+       6 target=/Users/sinchunyeung/.treehouse/firstmate-7bab20/9/firstmate/.opencode/plugins/fm-primary-watch-arm.js
+       3 target=/Users/sinchunyeung/.treehouse/firstmate-upstream-7bab20/1/firstmate-upstream/.opencode/plugins/fm-primary-cd-check.js
+       3 target=/Users/sinchunyeung/.treehouse/firstmate-upstream-7bab20/1/firstmate-upstream/.opencode/plugins/fm-primary-pretool-check.js
+       3 target=/Users/sinchunyeung/.treehouse/firstmate-upstream-7bab20/1/firstmate-upstream/.opencode/plugins/fm-primary-sessionstart-nudge.js
+       3 target=/Users/sinchunyeung/.treehouse/firstmate-upstream-7bab20/1/firstmate-upstream/.opencode/plugins/fm-primary-turnend-guard.js
+       3 target=/Users/sinchunyeung/.treehouse/firstmate-upstream-7bab20/1/firstmate-upstream/.opencode/plugins/fm-primary-watch-arm.js
+      30 target=/Users/sinchunyeung/github/firstmate/.opencode/plugins/fm-primary-cd-check.js
+      30 target=/Users/sinchunyeung/github/firstmate/.opencode/plugins/fm-primary-pretool-check.js
+      30 target=/Users/sinchunyeung/github/firstmate/.opencode/plugins/fm-primary-sessionstart-nudge.js
+      30 target=/Users/sinchunyeung/github/firstmate/.opencode/plugins/fm-primary-turnend-guard.js
+      30 target=/Users/sinchunyeung/github/firstmate/.opencode/plugins/fm-primary-watch-arm.js
+
+# (4) probe plugin with only named exports fails with the same loader error (live reproduction of the bug):
+cause="Cause([Fail(PluginModule.LoadError: Plugin must export a default definition with an id and an effect or setup function. (cause: SchemaError(Missing key\n  at [\"default\"])))])" http.span=156 role=server

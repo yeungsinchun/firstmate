@@ -1,0 +1,13 @@
+fm-gate-refuse: gate agent lifecycle permitted only against lab home /var/folders/f3/h4301l8d7hn_1612_5g5hpmw0000gn/T//fm-lab.hLrc6q
+●━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+●  WATCHER DOWN - SUPERVISION IS OFF
+●  1 task(s) in flight, but no watcher has a fresh beacon (last beat: never, grace 300s).
+●  Trust the emitted supervision protocol for this harness; do not use shell & for watcher repair.
+●  This is a supervision warning only; the guarded operation WILL still run.
+●  repair a missing or failed watcher cycle with the Pi tool fm_watch_arm_pi, or restart Pi with -e /Users/sinchunyeung/.no-mistakes/worktrees/19c7f602a392/01M41CPBA16KVHAH572XXK08XN/.pi/extensions/fm-primary-turnend-guard.ts -e /Users/sinchunyeung/.no-mistakes/worktrees/19c7f602a392/01M41CPBA16KVHAH572XXK08XN/.pi/extensions/fm-primary-pi-watch.ts if the extensions are not loaded.
+●━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+warning: /var/folders/f3/h4301l8d7hn_1612_5g5hpmw0000gn/T//fm-lab.hLrc6q/data/smoke2/launch-brief.md records no ship branch; defaulting to legacy branch fm/smoke2
+warning: /var/folders/f3/h4301l8d7hn_1612_5g5hpmw0000gn/T//fm-lab.hLrc6q/data/smoke2/launch-brief.md records no delivery contract line (scaffolded before ship briefs recorded one); launching on the explicit --mode no-mistakes - confirm its definition of done matches
+error: opencode v2 did not show a verified empty composer; brief was not sent to primary:fm-smoke2; inspect window primary:fm-smoke2
+warning: leaving task smoke2's slot claim on /private/var/folders/f3/h4301l8d7hn_1612_5g5hpmw0000gn/T/fm-lab.hLrc6q/treehouse/.treehouse/scratch-proj-92823a/2/scratch-proj in place; the Treehouse project lock is no longer held, so the next spawn's claim replaces it
+REFUSE_EXIT=1

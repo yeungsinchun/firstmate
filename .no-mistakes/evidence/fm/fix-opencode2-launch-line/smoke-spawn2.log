@@ -1,0 +1,5 @@
+fm-gate-refuse: gate agent lifecycle permitted only against lab home /var/folders/f3/h4301l8d7hn_1612_5g5hpmw0000gn/T//fm-lab.hLrc6q
+warning: /var/folders/f3/h4301l8d7hn_1612_5g5hpmw0000gn/T//fm-lab.hLrc6q/data/smoke1/launch-brief.md records no ship branch; defaulting to legacy branch fm/smoke1
+warning: /var/folders/f3/h4301l8d7hn_1612_5g5hpmw0000gn/T//fm-lab.hLrc6q/data/smoke1/launch-brief.md records no delivery contract line (scaffolded before ship briefs recorded one); launching on the explicit --mode no-mistakes - confirm its definition of done matches
+spawned smoke1 harness=opencode kind=ship mode=no-mistakes yolo=off window=primary:fm-smoke1 worktree=/private/var/folders/f3/h4301l8d7hn_1612_5g5hpmw0000gn/T/fm-lab.hLrc6q/treehouse/.treehouse/scratch-proj-92823a/1/scratch-proj
+SPAWN_EXIT=0

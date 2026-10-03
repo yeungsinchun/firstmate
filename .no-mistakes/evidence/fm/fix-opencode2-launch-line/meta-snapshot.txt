@@ -1,0 +1,14 @@
+state/smoke1.meta (captured while the spawn was live; the abort cleanup removed the meta once
+the endpoint was closed):
+
+window=primary:fm-smoke1
+endpoint_task_id=smoke1
+worktree=.../fm-lab.IuxjLo/projects/scratch-proj/.treehouse/scratch-proj-35ffef/1/scratch-proj
+project=.../fm-lab.IuxjLo/projects/scratch-proj
+harness=opencode
+kind=ship
+mode=no-mistakes
+yolo=off
+branch=fm/smoke1
+model=opencode/muse-spark-1.3-contributor-free
+effort=default

@@ -1,0 +1,12 @@
+Live lab task window (primary:1) after the v2 launch line was sent, opencode 2.0.22 rendering:
+
+                                                               ┃
+                                                               ┃  Ask anything… "Fix broken tests"
+                                                               ┃
+                                                               ┃  Build auto · Muse Spark 1.3 Free OpenCode Zen · xhigh
+                                                               ╹▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+                                                               /…/.…/scratch-proj-35ffef/1/scratch-proj  shift+tab agents  ctrl+p commands
+
+The status bar pins the resolved fleet model: "Build auto · Muse Spark 1.3 Free OpenCode Zen · xhigh"
+(the model for opencode/muse-spark-1.3-contributor-free) - proving the model rode the config default
+and the bare command accepted the new v2 launch shape (no --model flag, --standalone --auto).

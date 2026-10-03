@@ -1,0 +1,40 @@
+   Following launch-brief instru +
+  ┃
+
+     + Thought · 2 steps · 5.7s
+
+  ┃
+  ┃  $ echo "--- smoke proof ---"
+  ┃  opencode --version 2>&1…
+  ┃
+  ┃  (33 earlier lines)
+  ┃  INBOX_ABSENT=no steering messages
+  ┃  --- worktree ---
+  ┃  /private/var/folders/f3/h4301l8d7hn_1612_5g5hpmw0000gn/T/fm-lab.hLrc6q/treehouse/.treehouse/
+  ┃  scratch-proj-92823a/1/scratch-proj
+  ┃  ## HEAD (no branch)
+  ┃  # scratch
+  ┃  smoke world for the opencode 2.x launch-line lab
+  ┃
+
+     Live smoke spawn verified on opencode 2.0.22:
+
+     - opencode --version: v2.0.22
+     - OPENCODE_CONFIG_CONTENT: {"permission":{"*":"allow"},"model":"opencode/muse-spark-1.3-
+       contributor-free"} — model pinned as config default, 2.x form
+     - opencode --help: bare --model absent — confirms 2.x path, no rejected flag
+     - Brief read at .../data/smoke1/launch-brief.md
+     - Steering inbox .../state/smoke1.inbox: absent — no steering messages
+     - Worktree clean, README.md unchanged
+
+     This live response proves the 2.x launch line and empty-composer gate delivered the spawn.
+
+     Build · Muse Spark 1.3 Free · 1m 7s · 109.6 tok/s
+
+  ┃
+  ┃
+  ┃
+  ┃  Build auto · Muse Spark 1.3 Free OpenCode Zen · xhigh
+  ╹▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+  /…/fm-lab.…/treehouse/.treehouse/scratch-proj-92823a/1/scratch-proj  49.7K (5%)  ctrl+p commands
+
